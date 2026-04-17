@@ -1,10 +1,9 @@
-console.log("Hello from Node.js app!");
+const http = require("http");
 
-function add(a, b) {
-return a + b;
-}
+const server = http.createServer((req, res) => {
+  res.end("Hello from Docker 🚀");
+});
 
-// Example usage
-console.log("2 + 3 =", add(2, 3));
-
-module.exports = { add };
+server.listen(3000, () => {
+  console.log("Server running on port 3000");
+});
